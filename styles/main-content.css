@@ -24,7 +24,12 @@
     align-items: center;
 }
 
-.arrow-left, .arrow-right {
+.header__navigation .navigation .arrow-left {
+    margin-right: 1.25rem;
+}
+
+.arrow-left, 
+.arrow-right {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +40,6 @@
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    margin: 0 10px; /* Espaçamento entre as setas */
 }
 
 .header__login {
@@ -50,7 +54,7 @@
     height: 48px;
     margin-left: 8px;
     background-color: #242424;
-    border-radius: 500px; /* Certifique-se de que isso seja o desejado (arredondamento extremo) */
+    border-radius: 500px; 
     border: 1px solid transparent; 
 }
 
@@ -63,7 +67,7 @@
 .header__search input {
     background: transparent;
     border: none;
-    padding: 0 100px 0 12px; /* A forma mais curta de definir o padding */
+    padding: 0 100px 0 12px; 
     color: #fff;
     text-overflow: ellipsis;
     overflow: hidden;
