@@ -1,2 +1,21 @@
 const searchInput = document.getElementById('search-input');
-const searchInput2 = document.querySelector('.cards');
+const resultsArtist = document.getElementById('result-artist');
+const resultPlaylist = document.getElementById('result-playlistis');
+
+function requestApi(searchTerm) {
+    const url = `http://localhost:3000/artist?name_like=${searchTerm}`
+    fetch(url)
+        .then((response) => response.json())
+        .then((result) => displayResults (result))
+}
+
+document.addEventListener('input', function(){
+    const searchTerm = searchInput.ariaValueMax.toLowerCase();
+    if (searchTerm === '') {
+        resultPlaylist.classList.add('hidden');
+        resultPlaylist.classList.remove('hidden');
+        return;
+    }
+
+    requestApi(searchTerm);
+})
