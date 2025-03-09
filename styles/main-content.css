@@ -219,7 +219,7 @@
   bottom: 0;
   height: auto;
   width: 215px;
-  transform: translate(18%, -2%);
+  transform: rotate(25deg) translate(18%, -2%);
 }
 
 /* CARD ARTISTA */

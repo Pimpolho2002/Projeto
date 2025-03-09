@@ -1,16 +1,16 @@
 const searchInput = document.getElementById('search-input');
-const resultsArtist = document.getElementById('result-artist');
-const resultPlaylist = document.getElementById('result-playlistis');
+const resultArtist = document.getElementById("result-artist");
+const resultPlaylist = document.getElementById('result-playlists');
 
 function requestApi(searchTerm) {
-    const url = `http://localhost:3000/artist?name_like=${searchTerm}`
+    const url = `http://localhost:3000/artists?name_like=${searchTerm}`
     fetch(url)
         .then((response) => response.json())
-        .then((result) => displayResults (result))
+        .then((result) => displayResults(result))
 }
 
-function displayResults (result) {
-    resultPlaylist.classList.add('hidden')
+function displayResults(result) {
+    resultPlaylist.classList.add("hidden")
     const artistName = document.getElementById('artist-name');
     const artistImage = document.getElementById('artist-img');
 
@@ -18,17 +18,17 @@ function displayResults (result) {
         artistName.innerText = element.name;
         artistImage.src = element.urlImg;
     });
+
+    resultArtist.classList.remove('hidden');
 }
 
-resultsArtist.classList.remove('hidden');    
-
-document.addEventListener('input', function(){
-    const searchTerm = searchInput.ariaValueMax.toLowerCase();
+document.addEventListener('input', function () {
+    const searchTerm = searchInput.value.toLowerCase();
     if (searchTerm === '') {
         resultPlaylist.classList.add('hidden');
-        resultPlaylist.classList.remove('hidden');
-        return;
+        resultArtist.classList.remove('hidden');
+        return
     }
-
+    
     requestApi(searchTerm);
 })
