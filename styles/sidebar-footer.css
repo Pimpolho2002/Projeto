@@ -177,7 +177,7 @@ body{
   justify-content: space-between;
 }
 .disclaimer-premium .text {
- flex-shrink: 0;
+flex-shrink: 0;
 }
 .disclaimer-premium .disclaimer-premium__title {
   color: #e74b4b;
